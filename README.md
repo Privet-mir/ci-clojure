@@ -108,6 +108,7 @@ Create pipeline project
 * in build triggers > select generic webhook > enter Token value (swym)
 * pipeline > pipeline script > copy pipeline script from Jenkins file and paste it in textbox
 
+
 Once pipeline is created push change to develop branch it will automatically trigger pipeline
 
 ![pipeline jenkins](pipeline.png)
@@ -116,7 +117,11 @@ Code Quality / Vulnerability / Code Coverage reports are published on sonarqube
 
 ![sonar qube](sonar.png)
 
+After pipeline has deployed changes to prod, Open following URL in browser
 
+```
+http://jenkins_server_ip:5000/api-docs
+```
 
 ## Improvements / Features
 
