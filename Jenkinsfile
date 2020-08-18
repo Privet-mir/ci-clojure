@@ -10,7 +10,7 @@ pipeline {
                 cleanWs()
                 git branch: '${BRANCH_NAME}',
                 credentialsId: 'your_global_creds_id',
-                url: 'https://Privet-mir@github.com/Privet-mir/clojure-simple-api.git'
+                url: 'https://Privet-mir@github.com/Privet-mir/ci-clojure.git'
                 
                 sh "ls -lat"
                 archiveArtifacts artifacts: '**/*'
