@@ -14,7 +14,7 @@ Jenkins Pipeline to deploy Clojure code on docker swarm cluster
 
 * Services are Deployed on Single node docker swarm cluster
 * Two service have been created one for staging and one for production each running 3 replica of containers
-* Strategy used for deployment of services is rolling and rollback
+* Strategy used for deployment of services is rolling updates and rollback
 * If service exists pipeline will perform rolling update of image where each container image will be updated in reverse order (3 2 1) with an interval of 10s. next container is updated only when previous container status is running.
 * If service does not exists pipeline will create one.
 * In case of FAILURE container getting updated will pause and rollback to its previous version. 
@@ -117,3 +117,13 @@ Code Quality / Vulnerability / Code Coverage reports are published on sonarqube
 ![sonar qube](sonar.png)
 
 
+
+## Improvements / Features
+
+* Integrate sonarqube with git repository and perform checks on push / PR if quality gates pass then let it merge / trigger other jobs
+* Add Notifications to jenkins, set up smtp / slack channel to notfiy on pipeline failures / success
+* Put jenkins behind reverse proxy.
+* Remove generic triggers and add github integrations using jenkins API token
+* Enable jenkins matrix security to implement RBAC
+* Sonar qube authentication
+* Impelment canary release for service deployment on production. (eg. we create service B and forward 25% of traffic to it (service A with 75%) observe it for few days and client behaviour if all goes well shift 100% traffic to service B and depricate service A)
