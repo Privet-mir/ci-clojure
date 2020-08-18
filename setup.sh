@@ -1,10 +1,11 @@
 #!/bin/bash
 
 
-echo "Setup Jenkins and Sonarqube on Ubuntu 18.04"
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-NC='\033[0m' # No Color
+ RED='\033[0;31m'
+ GREEN='\033[0;32m'
+ NC='\033[0m' # No Color
+
+echo -e "${GREEN}Setup Jenkins and Sonarqube on Ubuntu 18.04${NC}"
 
 
 if ! command -v java;
