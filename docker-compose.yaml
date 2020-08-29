@@ -6,7 +6,6 @@ services:
       replicas: 3
     ports:
       - "4000:4000"
-        #HealthCheck
         #    healthcheck:
         #      test: ["CMD", "curl", "http://localhost:4000"]
         #      interval: 5s
